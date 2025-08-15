@@ -17,7 +17,4 @@ Ekran görüntüleri README.md dosyasında veya diğer belgelerde proje arayüz�
 
 ## Notlar
 - Ekran görüntüleri `.png` formatındadır.
-- Proje ile ilgili görseller güncel tutulmalıdır.
-- README dosyalarında görsel eklemek için örnek kullanım:
-```markdown
-![Doctor Login](docs/screenshots/doctor_login.png)
+
