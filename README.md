@@ -200,6 +200,7 @@ bedside_patient_monitor/
 
 ## 👨‍💻 Developer
 - Arda Şimşek
+GitHub: [ardasmsek58](https://github.com/ardasmsek58)
 
 ---
 
