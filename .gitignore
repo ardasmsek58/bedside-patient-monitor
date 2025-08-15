@@ -1,0 +1,60 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pytest_cache/
+.venv/
+venv/
+.env
+
+# Flask
+instance/
+
+# Qt / QML / qmake
+*.user
+*.pro.user*
+*.qmake.stash
+*.moc
+moc_*
+.qtdir
+*.qmlc
+*.jsc
+Makefile*
+
+# C/C++
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+*.exe
+
+# CMake
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.cmake
+
+# Logs
+*.log
+
+# Generated assets
+client-qt/assets/generated/
+server-flask/static/gen/
+
+# Databases
+*.db
