@@ -207,6 +207,15 @@ bedside_patient_monitor/
 
 This project is licensed under the [MIT License](LICENSE).
 
+---
+
+## 📦 Latest Release
+
+The latest stable version of **Bedside Patient Monitor** can be found on the [Releases page](https://github.com/ardasmsek58/bedside-patient-monitor/releases).
+
+You can download the source code or binaries from the latest release to try the project without cloning the repository manually.
+
+
 
 
 
