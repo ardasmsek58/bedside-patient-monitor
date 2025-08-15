@@ -161,8 +161,10 @@ bedside_patient_monitor/
 ├── docs/                         # Documentation and media
 │   └── screenshots/
 │
-├── LICENSE
-└── README.md
+├── .gitignore                    # Ignored files configuration
+├── LICENSE                       # MIT license
+└── README.md                     # Project documentation
+
 ```
 
 ---
