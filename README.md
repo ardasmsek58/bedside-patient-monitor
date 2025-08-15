@@ -109,59 +109,60 @@ v
 ## 📁 Project Structure
 
 bedside_patient_monitor/
-├── client-qt/ # Qt/QML desktop patient monitor
-│ ├── bedside_monitor.pro # qmake project file
-│ ├── main.cpp # Application entry point
-│ ├── main.qml # Root QML file
-│ ├── database.cpp / .h # SQLite integration
-│ ├── devicemanager.cpp / .h # Serial communication & data parsing
-│ ├── print.cpp / .h # Printing via QPrinter
-│ ├── smmprotocoltest.cpp / .h # pSMM-V12.1 protocol handling
-│ ├── testmode.cpp / .h # Test data simulation
-│ ├── components/ # QML component modules
-│ │ ├── doctor/ # Doctor UI components
-│ │ │ ├── BottomBar.qml
-│ │ │ ├── BottomVitalsRow.qml
-│ │ │ ├── DoctorLogin.qml
-│ │ │ ├── DoctorRegister.qml
-│ │ │ ├── DoctorView.qml
-│ │ │ ├── history.qml
-│ │ │ ├── PatientSelector.qml
-│ │ │ ├── PrintDialog.qml
-│ │ │ ├── TestModeButton.qml
-│ │ │ └── VitalsGraphRow.qml
-│ │ └── visitor/ # Visitor UI components
-│ │ └── VisitorView.qml
-│ └── build/ # Build artifacts (ignored in VCS)
+├── client-qt/                  # Qt/QML desktop patient monitor
+│   ├── bedside_monitor.pro      # qmake project file
+│   ├── main.cpp                 # Application entry point
+│   ├── main.qml                 # Root QML file
+│   ├── database.cpp / .h        # SQLite integration
+│   ├── devicemanager.cpp / .h   # Serial communication & data parsing
+│   ├── print.cpp / .h           # Printing via QPrinter
+│   ├── smmprotocoltest.cpp / .h # pSMM-V12.1 protocol handling
+│   ├── testmode.cpp / .h        # Test data simulation
+│   ├── components/              # QML component modules
+│   │   ├── doctor/              # Doctor UI components
+│   │   │   ├── BottomBar.qml
+│   │   │   ├── BottomVitalsRow.qml
+│   │   │   ├── DoctorLogin.qml
+│   │   │   ├── DoctorRegister.qml
+│   │   │   ├── DoctorView.qml
+│   │   │   ├── history.qml
+│   │   │   ├── PatientSelector.qml
+│   │   │   ├── PrintDialog.qml
+│   │   │   ├── TestModeButton.qml
+│   │   │   └── VitalsGraphRow.qml
+│   │   └── visitor/             # Visitor UI components
+│   │       └── VisitorView.qml
+│   └── build/                   # Build artifacts (ignored in VCS)
 │
-├── server-flask/ # Flask backend (web dashboard & API)
-│ ├── app.py # Main Flask app
-│ ├── forms.py # WTForms definitions
-│ ├── otp.py # OTP generation & validation
-│ ├── otp_form.py # OTP form handling
-│ ├── veriler.db # SQLite database (example)
-│ ├── templates/ # HTML templates
-│ │ ├── index.html
-│ │ ├── login.html
-│ │ ├── register.html
-│ │ ├── otp.html
-│ │ └── static/ # Static files for templates
-│ │ ├── css/
-│ │ │ ├── style.css
-│ │ │ ├── login.css
-│ │ │ ├── register.css
-│ │ │ └── otp.css
-│ │ └── js/
-│ │ ├── script.js
-│ │ ├── login.js
-│ │ ├── otp.js
-│ │ └── register.js
+├── server-flask/                # Flask backend (web dashboard & API)
+│   ├── app.py                    # Main Flask app
+│   ├── forms.py                  # WTForms definitions
+│   ├── otp.py                    # OTP generation & validation
+│   ├── otp_form.py               # OTP form handling
+│   ├── veriler.db                # SQLite database (example)
+│   ├── templates/                # HTML templates
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── otp.html
+│   │   └── static/               # Static files for templates
+│   │       ├── css/
+│   │       │   ├── style.css
+│   │       │   ├── login.css
+│   │       │   ├── register.css
+│   │       │   └── otp.css
+│   │       └── js/
+│   │           ├── script.js
+│   │           ├── login.js
+│   │           ├── otp.js
+│   │           └── register.js
 │
-├── docs/ # Documentation and media
-│ └── screenshots/
+├── docs/                         # Documentation and media
+│   └── screenshots/
 │
 ├── LICENSE
 └── README.md
+
 
 ---
 
