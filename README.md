@@ -66,6 +66,7 @@ The **Bedside Patient Monitor** system follows a modular architecture, combining
 
 ### **Architecture Diagram**
 
+```
 +-------------------+ Serial Data +---------------------+
 | Sensor Module | --------------------> | Qt DeviceManager |
 | (pSMM-V12.1) | | (Packet Parsing) |
@@ -93,7 +94,7 @@ v
 | Web Dashboard UI |
 | (Vitals, Waveforms, Reports)|
 +-----------------------------+
-
+```
 ---
 
 ### **Key Components**
@@ -107,7 +108,7 @@ v
 ---
 
 ## 📁 Project Structure
-
+```
 bedside_patient_monitor/
 ├── client-qt/                  # Qt/QML desktop patient monitor
 │   ├── bedside_monitor.pro      # qmake project file
@@ -162,7 +163,7 @@ bedside_patient_monitor/
 │
 ├── LICENSE
 └── README.md
-
+```
 
 ---
 
