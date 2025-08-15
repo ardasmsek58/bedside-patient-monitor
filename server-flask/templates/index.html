@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaScope Dashboard - Hasta Monitörü</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <h1>VitaScope</h1>
+            <span class="dashboard-badge">Dashboard</span>
+        </div>
+        <div class="navbar-user">
+            <!--    <a href="/monitor" class="monitor-btn">📟 Monitör</a> -->
+            <div class="user-info">
+                <div class="user-icon">👤</div>
+                <span class="username" id="currentUser">{{ current_user.username if current_user.is_authenticated else
+                    'Kullanıcı' }}</span>
+            </div>
+            <a href="/logout" class="logout-btn">
+                <span>🚪</span>
+                Çıkış
+            </a>
+        </div>
+    </nav>
+
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <div class="connection-status connected" id="connectionStatus">
+        🟢 Bağlantı Aktif
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="header">
+                <h2>Gerçek Zamanlı Hasta Monitörü</h2>
+                <p>Anlık vital bulgular ve grafik analizi</p>
+            </div>
+
+            <!-- Canlı Veriler Bölümü -->
+            <div class="section-title">📊 Canlı Veri Monitörü</div>
+            <div class="metrics-container">
+                <div class="metric-card hr-card">
+                    <div class="status-indicator"></div>
+                    <div class="metric-content">
+                        <span class="metric-icon">❤️</span>
+                        <div class="metric-label">Kalp Atış Hızı</div>
+                        <div class="metric-value" id="hr">--</div>
+                        <div class="metric-unit">bpm</div>
+                    </div>
+                </div>
+
+                <div class="metric-card spo2-card">
+                    <div class="status-indicator"></div>
+                    <div class="metric-content">
+                        <span class="metric-icon">🫁</span>
+                        <div class="metric-label">Kan Oksijen Saturasyonu</div>
+                        <div class="metric-value" id="spo2">--</div>
+                        <div class="metric-unit">%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diğer Vital Bulgular Bölümü -->
+            <div class="section-title">📈 Diğer Vital Bulgular</div>
+            <div class="other-metrics-container">
+                <div class="metric-card nibp-card">
+                    <div class="status-indicator inactive"></div>
+                    <div class="metric-content">
+                        <span class="metric-icon">🩺</span>
+                        <div class="metric-label">Non-Invasive Kan Basıncı</div>
+                        <div class="metric-value" id="nibp">--/--</div>
+                        <div class="metric-unit">mmHg</div>
+                    </div>
+                </div>
+
+                <div class="metric-card etco2-card">
+                    <div class="status-indicator inactive"></div>
+                    <div class="metric-content">
+                        <span class="metric-icon">💨</span>
+                        <div class="metric-label">End-Tidal CO₂</div>
+                        <div class="metric-value" id="etco2">--</div>
+                        <div class="metric-unit">mmHg</div>
+                    </div>
+                </div>
+
+                <div class="metric-card resp-card">
+                    <div class="status-indicator "></div>
+                    <div class="metric-content">
+                        <span class="metric-icon">🌬️</span>
+                        <div class="metric-label">Solunum Hızı</div>
+                        <div class="metric-value" id="resp">--</div>
+                        <div class="metric-unit">/min</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grafik Bölümü -->
+            <div class="chart-container">
+                <div class="chart-title">📊 Canlı Veri Grafiği (10 saniye güncellenme)</div>
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

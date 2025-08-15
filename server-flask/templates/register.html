@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - VitaScope</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+
+<body>
+    <div class="bg-animation">
+        <div class="particle" style="left: 15%; top: 25%; width: 4px; height: 4px; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 75%; top: 75%; width: 6px; height: 6px; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 35%; top: 45%; width: 3px; height: 3px; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 85%; top: 55%; width: 5px; height: 5px; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 25%; top: 65%; width: 4px; height: 4px; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 55%; top: 15%; width: 3px; height: 3px; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 10%; top: 85%; width: 5px; height: 5px; animation-delay: 6s;"></div>
+    </div>
+
+    <div class="register-container">
+        <div class="register-box">
+            <div class="logo">
+                <h1>VitaScope</h1>
+                <p>Sağlığınızın dijital geleceği</p>
+            </div>
+
+            <div class="welcome-text">
+                Hesabınızı oluşturun ve başlayın
+            </div>
+
+            <!-- Flask flash mesajları -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+
+            {% if "aktivasyon bağlantısı gönderildi" in message %}
+            <script>
+                alert("✅ {{ message }}");
+            </script>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+
+            <form method="POST" id="registerForm">
+                {{ form.hidden_tag() }}
+
+                <div class="form-group">
+                    {{ form.username.label }}
+                    {{ form.username(placeholder="Kullanıcı adınızı seçin") }}
+                    <div class="input-icon">👤</div>
+                    {% for error in form.username.errors %}
+                    <div class="flash danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.email.label }}
+                    {{ form.email(placeholder="E-posta adresinizi girin") }}
+                    <div class="input-icon">📧</div>
+                    {% for error in form.email.errors %}
+                    <div class="flash danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <div class="form-group password-group">
+                    {{ form.password.label }}
+                    {{ form.password(class="form-control", placeholder="Güvenli bir şifre oluşturun", id="password") }}
+                    <div class="input-icon">🔒</div>
+                    <div class="strength-meter">
+                        <div class="strength-fill" id="strengthFill"></div>
+                    </div>
+                    <div class="strength-text" id="strengthText">Şifre gücü</div>
+
+                    {% for error in form.password.errors %}
+                    <div class="flash danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <!-- 🔐 Şifre Tekrar -->
+                <div class="form-group">
+                    {{ form.confirm_password.label }}
+                    {{ form.confirm_password(class="form-control", placeholder="Şifrenizi tekrar girin",
+                    id="confirmPassword") }}
+                    <div class="input-icon">🔐</div>
+
+                    {% for error in form.confirm_password.errors %}
+                    <div class="flash danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                {{ form.submit(class="register-btn", id="registerBtn") }}
+            </form>
+
+            <div class="terms">
+                Hesap oluşturarak <a href="#" onclick="showTerms()">Kullanım Koşulları</a> ve <a href="#"
+                    onclick="showPrivacy()">Gizlilik Politikası</a>'nı kabul etmiş olursunuz.
+            </div>
+
+            <div class="login-link">
+                <a href="{{ url_for('login') }}">Zaten hesabınız var mı? Giriş yap</a>
+            </div>
+        </div>
+    </div>
+
+    <script defer src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+
+</html>
